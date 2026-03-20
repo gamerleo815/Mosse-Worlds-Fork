@@ -1,0 +1,1 @@
+$data modify storage legitiads:ads ads append value $(temp_ad)

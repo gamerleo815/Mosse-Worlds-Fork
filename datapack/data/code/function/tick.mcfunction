@@ -1,0 +1,80 @@
+visibility @a show @a
+team join player @a[team=]
+effect give @a saturation 10 1 true
+execute store result score .players misc if entity @a
+execute as @a unless score @s id matches -2147483648..2147483647 run function code:_id
+
+execute as @a run function code:realtime/set
+
+function code:browser/tick
+function code:ads/tick
+
+execute as @a[predicate=code:is_y_below_40,tag=legitermoose.is_playing] run function legitermoose:util/get_name
+execute if entity @a[predicate=code:is_y_below_40,tag=legitermoose.is_playing] run tellraw @a[tag=legitermoose.is_playing] [{text:"[",color:gray},{text:"↓",color:yellow},{text:"] ",color:gray},{storage:"legitermoose:temp",nbt:playername}]
+execute if entity @a[predicate=code:is_y_below_40,tag=legitermoose.is_playing] run tellraw @a[tag=!legitermoose.is_playing] [{text:"[",color:gray},{text:"↓",color:green},{text:"] ",color:gray},{storage:"legitermoose:temp",nbt:playername}]
+tp @a[predicate=code:is_y_below_40] 0 64 0
+execute as @a[x=1,y=64,z=26,dx=-2,dy=2,dz=1] run tp @s 100 64 0
+
+# Random World Button
+execute positioned 0 65 5 if block ~ ~ ~ stone_button[powered=true] run http callback code:random_world/init store api random send "https://api.legiti.dev/world/random" GET
+
+
+# Good World Button
+execute positioned -2 65 5 if block ~ ~ ~ polished_blackstone_button[powered=true] run http callback code:good_world/get store api good_world send "https://api.legiti.dev/world/random" GET
+
+
+# Version Info Button
+execute positioned 2 65 5 if block ~ ~ ~ stone_button[powered=true] run http callback code:api_version/init store api version send "https://api.legiti.dev/" GET
+
+# Toggle Info 
+scoreboard players enable @a toggle_info
+execute as @a[scores={toggle_info=1..}] run function code:toggle_info
+scoreboard players reset @a[scores={toggle_info=1..}] toggle_info
+
+# Join Message
+# add code one day
+
+scoreboard players add .globaltimer misc 1
+execute if score .globaltimer misc matches 100 run function code:polishkrowa/init
+
+execute if score .globaltimer misc matches 600 run tellraw @a[tag=is_admin,tag=!ignore] {text:"Calling API... (Live Vote / Visit Count)",color:dark_purple}
+execute if score .globaltimer misc matches 600 run http callback code:update_vote_count store api vote_count send "https://api.legiti.dev/world/f9407daa-81c5-4de5-a200-667667f09750"
+
+execute if score .globaltimer misc matches 1200 run function code:moose/init
+
+
+
+# Timeout
+scoreboard players remove @a[scores={timeout=1..}] timeout 1
+scoreboard players add @a timeout 0
+visibility @a[scores={timeout=1..},tag=!is_admin] show @e[tag=show_for_timed_out_users]
+visibility @a[scores={timeout=..0},tag=!is_admin] hide @e[tag=show_for_timed_out_users]
+visibility @a[tag=is_admin] hide @e[tag=show_for_timed_out_users]
+
+execute as @e[type=interaction,tag=chest_protection_interaction] on target run tellraw @s {text:"You are timed out from the world browser.",color:red}
+execute as @e[type=interaction,tag=chest_protection_interaction] on target at @s run playsound block.note_block.bass block @s ~ ~ ~ 1 0 0.7
+execute as @e[type=interaction,tag=chest_protection_interaction] run data remove entity @s interaction
+
+
+scoreboard players enable @a offset
+
+
+execute as @a[scores={offset=-2147483648..2147483647}] unless score @s offset = @s hour2 run function code:realtime/update_offset
+
+
+execute if entity @a[name=olaf_294] run setblock 10 65 -35 bedrock
+execute unless entity @a[name=olaf_294] run setblock 10 65 -35 air
+
+
+# discord interaction
+execute as @e[type=interaction,tag=discord_join] on target run tellraw @s {text:"Click here to join the discord!",color:blue,underlined:1b,click_event:{action:"open_url",url:"https://discord.gg/KTAusBx2GH"}}
+execute as @e[type=interaction,tag=discord_join] run data remove entity @s interaction
+
+
+#execute if score .seconds_midnight time matches 64800 run scoreboard players set .thefacts misc 1
+#execute if score .thefacts misc matches 1 run tellraw @a [{text:"It is 7 P.M. The Facts are now presented by"},{selector:"@r"}]
+#execute if score .thefacts misc matches 1 run scoreboard players set .thefacts misc 0
+
+
+
+scoreboard players reset @a[tag=legitermoose.is_playing] toggle_info

@@ -1,0 +1,3 @@
+give @s grass_block[custom_data={PublicBukkitValues:{"datapackserverpaper:is_inventory_item":1b}},custom_model_data={strings:["Legitermoose:gui_element"]},custom_name={color:"green",italic:0b,text:"Play "},\
+                    lore=  [{color:"gray",italic:0b,text:"Explore worlds made"},{color:"gray",italic:0b,text:"by other players."},{color:"gray",italic:0b,text:""},{color:"gray",extra:[{color:"gold",text:"/play"}," to open"],italic:0b,text:"Type "},\
+                            {color:"gray",italic:0b,text:"this menu anywhere."}]] 1
