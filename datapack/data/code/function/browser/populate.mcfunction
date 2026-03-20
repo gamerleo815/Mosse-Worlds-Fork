@@ -6,8 +6,10 @@ execute if data storage a a.error run tellraw @a[tag=is_admin,tag=!ignore] [{tex
 execute if data storage a a.error run return run http callback code:browser/populate store a a send "https://api.legiti.dev/top/5" GET
 
 
-tellraw @a[tag=is_admin,tag=!ignore] [{text:"API response code: ",color:aqua},{storage:a,nbt:"a.status_code",color:gold}]
-tellraw @a[tag=is_admin,tag=!ignore] {text:"Populating Worlds...",color:dark_purple}
+execute if data storage a {a:{status_code:200}} run tellraw @a[tag=is_admin,tag=!ignore] [{text:"(API) Rᴇꜱᴘᴏɴꜱᴇ: ",color:gray},{storage:a,nbt:"a.status_code",color:dark_green}]
+execute unless data storage a {a:{status_code:200}} run tellraw @a[tag=is_admin,tag=!ignore] [{text:"(API) Rᴇꜱᴘᴏɴꜱᴇ: ",color:gray},{storage:a,nbt:"a.status_code",color:yellow}]
+
+tellraw @a[tag=is_admin,tag=!ignore] {text:"Populating Worlds...",color:"#333388"}
 
 # cleanup aka setting an example structure because /data is dumb
 data remove storage a temp.a

@@ -48,13 +48,13 @@ team add tester
 team modify tester friendlyFire false
 team modify tester collisionRule never
 
-tellraw @a { "color": "gold", "text": "The Mosse is World"}
+tellraw @a { "color": "gold", "text": "Tʜᴇ Mᴏꜱꜱᴇ ɪꜱ Wᴏʀʟᴅ"}
 
 execute unless loaded 9 64 -19 run return fail
 
 kill @e[tag=time]
-summon text_display 13.90 69.0 0.5 {text:[{text:"Current Time (UTC ",color:gold},{score:{name:".offset",objective:time},color:red},{text:")\n",color:gold},{text:"hh",color:green},{text:":",color:dark_gray},{text:"mm",color:green},{text:":",color:dark_gray},{text:"ss",color:green}],Tags:["time_utc","time"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [2.0f, 2.0f, 2.0f], translation: [0.0f, 0.0f, 0.0f]}}
-summon text_display 13.90 68.1 0.5 {text:[{text:"Current Date (UTC 0)\n",color:light_purple},{text:"dd",color:yellow},{text:".",color:dark_gray},{text:"mm",color:yellow},{text:".",color:dark_gray},{text:"yyyy",color:yellow}],Tags:["date_utc","time"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.5f, 1.5f, 1.5f], translation: [0.0f, 0.0f, 0.0f]}}
+summon text_display 13.90 69.0 0.5 {text:[{text:"Cᴜʀʀᴇɴᴛ Tɪᴍᴇ (UTC ",color:gold},{score:{name:".offset",objective:time},color:red},{text:")\n",color:gold},{text:"hh",color:green},{text:":",color:dark_gray},{text:"mm",color:green},{text:":",color:dark_gray},{text:"ss",color:green}],Tags:["time_utc","time"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [2.0f, 2.0f, 2.0f], translation: [0.0f, 0.0f, 0.0f]}}
+summon text_display 13.90 68.1 0.5 {text:[{text:"Cᴜʀʀᴇɴᴛ Dᴀᴛᴇ (UTC 0)\n",color:light_purple},{text:"dd",color:yellow},{text:".",color:dark_gray},{text:"mm",color:yellow},{text:".",color:dark_gray},{text:"yyyy",color:yellow}],Tags:["date_utc","time"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.5f, 1.5f, 1.5f], translation: [0.0f, 0.0f, 0.0f]}}
 
 kill @e[tag=moss]
 summon text_display 10.9 66.9 -14.5 {text:[{player:Legitermoose},{text:" Legitermoose Status: ",color:light_purple},{text:"ᴜɴᴋɴᴏᴡɴ",color:yellow}],Tags:["moss","moss_status"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.6f, 1.6f, 1.6f], translation: [0.0f, 0.0f, 0.0f]}}

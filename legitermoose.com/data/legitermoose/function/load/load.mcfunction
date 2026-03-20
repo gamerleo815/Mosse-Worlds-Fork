@@ -1,4 +1,4 @@
-tellraw @a[tag=is_admin] [{text:"legitermoose.com loaded",color:gray}]
+tellraw @a[tag=is_admin] [{text:"ʟᴇɢɪᴛᴇʀᴍᴏᴏꜱᴇ.ᴄᴏᴍ ʟᴏᴀᴅᴇᴅ!",color:gray}]
 
 execute if loaded 1000 64 0 run function legitermoose:load/spawn
 

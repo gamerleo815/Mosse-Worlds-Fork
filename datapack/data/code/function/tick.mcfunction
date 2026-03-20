@@ -37,7 +37,7 @@ scoreboard players reset @a[scores={toggle_info=1..}] toggle_info
 scoreboard players add .globaltimer misc 1
 execute if score .globaltimer misc matches 100 run function code:polishkrowa/init
 
-execute if score .globaltimer misc matches 600 run tellraw @a[tag=is_admin,tag=!ignore] {text:"Calling API... (Live Vote / Visit Count)",color:dark_purple}
+execute if score .globaltimer misc matches 600 run tellraw @a[tag=is_admin,tag=!ignore] {text:"Cᴀʟʟɪɴɢ API... (Lɪᴠᴇ Vᴏᴛᴇ / Vɪꜱɪᴛ Cᴏᴜɴᴛ)",color:"#333388"}
 execute if score .globaltimer misc matches 600 run http callback code:update_vote_count store api vote_count send "https://api.legiti.dev/world/f9407daa-81c5-4de5-a200-667667f09750"
 
 execute if score .globaltimer misc matches 1200 run function code:moose/init
