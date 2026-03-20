@@ -9,6 +9,9 @@ setblock ~ ~-2 ~ test_block[mode=start]
 # Increase amount of attempt ticks by 1, until 3 seconds
 scoreboard players add @s legitermoose.tp_cd 1
 
+# Remove flying 
+data merge entity @s[tag=!is_admin] {abilities:{mayfly:0b,flying:0b}}
+
 # if loaded, do the fun stuff
 execute if loaded ~ ~ ~ run inventory @s close
 execute if loaded ~ ~ ~ run tellraw @s {text:"World loaded!",color:green}

@@ -106,3 +106,7 @@ tag @a[scores={lobby=1..}] add legitermoose.is_playing
 execute as @a[scores={lobby=1..}] at @s run playsound block.note_block.pling ui @s ~ ~ ~ 1 2
 tellraw @a[scores={lobby=1..}] [{text:"Wᴇʟᴄᴏᴍᴇ ᴛᴏ ",color:gold},{text:"ʟᴇɢɪᴛᴇʀᴍᴏᴏꜱᴇ.ᴄᴏᴍ",color:"#00AAFF",underlined:1b},{text:"! ",color:gold,underlined:0b},"\n",{text:"Cᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ: ",color:dark_green},{text:"ʟᴏʙʙʏ",color:green}]
 scoreboard players reset @a[scores={lobby=1..}] lobby
+
+execute positioned 1000 64 0 run scoreboard players enable @a[distance=..250,tag=is_am] fly
+execute positioned 1000 64 0 run scoreboard players reset @a[distance=251..] fly
+execute as @a[scores={fly=1..}] run function legitermoose:lobby/toggle_fly
