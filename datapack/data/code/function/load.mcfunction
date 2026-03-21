@@ -57,21 +57,21 @@ summon text_display 13.90 69.0 0.5 {text:[{text:"Cᴜʀʀᴇɴᴛ Tɪᴍᴇ (UTC
 summon text_display 13.90 68.1 0.5 {text:[{text:"Cᴜʀʀᴇɴᴛ Dᴀᴛᴇ (UTC 0)\n",color:light_purple},{text:"dd",color:yellow},{text:".",color:dark_gray},{text:"mm",color:yellow},{text:".",color:dark_gray},{text:"yyyy",color:yellow}],Tags:["date_utc","time"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.5f, 1.5f, 1.5f], translation: [0.0f, 0.0f, 0.0f]}}
 
 kill @e[tag=moss]
-summon text_display 10.9 66.9 -14.5 {text:[{player:Legitermoose},{text:" Legitermoose Status: ",color:light_purple},{text:"ᴜɴᴋɴᴏᴡɴ",color:yellow}],Tags:["moss","moss_status"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.6f, 1.6f, 1.6f], translation: [0.0f, 0.0f, 0.0f]}}
-summon text_display 10.9 66.5 -14.5 {text:{text:"Check to see if Legitermoose is online.",color:gray},Tags:["moss"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [0.0f, 0.0f, 0.0f]}}
-summon text_display 10.9 66.1 -14.5 {text:[{text:"World will display ",color:gray},[{text:"here",color:dark_gray}],{text:".",color:gray}],Tags:["moss","moss_world"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [0.0f, 0.0f, 0.0f]},line_width:500}
+summon text_display 11.9 66.9 -14.5 {text:[{player:Legitermoose},{text:" Lᴇɢɪᴛᴇʀᴍᴏᴏꜱᴇ Sᴛᴀᴛᴜꜱ: ",color:light_purple},{text:"ᴜɴᴋɴᴏᴡɴ",color:yellow}],Tags:["moss","moss_status"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.6f, 1.6f, 1.6f], translation: [0.0f, 0.0f, 0.0f]}}
+summon text_display 11.9 66.5 -14.5 {text:{text:"Cʜᴇᴄᴋ ᴛᴏ ꜱᴇᴇ ɪꜰ Lᴇɢɪᴛᴇʀᴍᴏᴏꜱᴇ ɪꜱ ᴏɴʟɪɴᴇ.",color:gray},Tags:["moss"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [0.0f, 0.0f, 0.0f]},line_width:500}
+summon text_display 11.9 66.1 -14.5 {text:[{text:"Wᴏʀʟᴅ ᴡɪʟʟ ᴅɪꜱᴘʟᴀʏ ",color:gray},[{text:"ʜᴇʀᴇ",color:dark_gray}],{text:".",color:gray}],Tags:["moss","moss_world"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [0.0f, 0.0f, 0.0f]},line_width:500}
 
 kill @e[tag=polish]
-summon text_display 10.9 66.9 -22.5 {text:[{player:PolishKrowa},{text:" PolishKrowa Status: ",color:light_purple},{text:"ᴜɴᴋɴᴏᴡɴ",color:yellow}],Tags:["polish","polish_status"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.6f, 1.6f, 1.6f], translation: [0.0f, 0.0f, 0.0f]}}
-summon text_display 10.9 66.5 -22.5 {text:{text:"Check to see if PolishKrowa is online.",color:gray},Tags:["polish"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [0.0f, 0.0f, 0.0f]}}
-summon text_display 10.9 66.1 -22.5 {text:[{text:"World will display ",color:gray},[{text:"here",color:dark_gray}],{text:".",color:gray}],Tags:["polish","polish_world"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [0.0f, 0.0f, 0.0f]},line_width:500}
+summon text_display 11.9 66.9 -22.5 {text:[{player:PolishKrowa},{text:" PᴏʟɪꜱʜKʀᴏᴡᴀ Sᴛᴀᴛᴜꜱ: ",color:light_purple},{text:"ᴜɴᴋɴᴏᴡɴ",color:yellow}],Tags:["polish","polish_status"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.6f, 1.6f, 1.6f], translation: [0.0f, 0.0f, 0.0f]}}
+summon text_display 11.9 66.5 -22.5 {text:{text:"Cʜᴇᴄᴋ ᴛᴏ ꜱᴇᴇ ɪꜰ PᴏʟɪꜱʜKʀᴏᴡᴀ ɪꜱ ᴏɴʟɪɴᴇ.",color:gray},Tags:["polish"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [0.0f, 0.0f, 0.0f]},line_width:500}
+summon text_display 11.9 66.1 -22.5 {text:[{text:"Wᴏʀʟᴅ ᴡɪʟʟ ᴅɪꜱᴘʟᴀʏ ",color:gray},[{text:"ʜᴇʀᴇ",color:dark_gray}],{text:".",color:gray}],Tags:["polish","polish_world"],Rotation:[90,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [0.0f, 0.0f, 0.0f]},line_width:500}
 
 kill @e[tag=discord_join]
 summon interaction 5.5 64.5 10.5 {width:2,height:2,Tags:["discord_join"]}
-summon text_display 5.5 66.2 9.9 {text:{text:"Click to join the Discord!",color:blue},Tags:["discord_join"],Rotation:[180,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.9f, 0.9f, 0.9f], translation: [0.0f, 0.0f, 0.0f]}}
+summon text_display 5.5 66.2 9.9 {text:{text:"Cʟɪᴄᴋ ᴛᴏ ᴊᴏɪɴ ᴛʜᴇ Dɪꜱᴄᴏʀᴅ!",color:blue},Tags:["discord_join"],Rotation:[180,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.875f, 0.875f, 0.875f], translation: [0.0f, 0.0f, 0.0f]}}
 
 
-execute positioned 10 63 -12 run function code:moose/init
+execute positioned 10 63 -12 run function code:playerdetect/init
 
 scoreboard players set .globaltimer misc 0
 

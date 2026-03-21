@@ -21,8 +21,8 @@ execute as @s[tag=!is_admin] unless score @s legitermoose.rank matches -21474836
 # All Lobby GMC players get Creative if they are at lobby
 gamemode creative @s[tag=!is_admin,scores={legitermoose.rank=5}]
 
-    # Set all admins to have rank 10 by default
-    # scoreboard players set @a[tag=is_admin,tag=legitermoose.is_playing] legitermoose.rank 10
+# All Admins in Lobby get Rank 10
+execute positioned 1000 64 0 run scoreboard players set @a[tag=is_admin,distance=..250] legitermoose.rank 10
 
 # Set all Rank 10s to Creative
 gamemode creative @s[tag=!is_admin,scores={legitermoose.rank=10}]

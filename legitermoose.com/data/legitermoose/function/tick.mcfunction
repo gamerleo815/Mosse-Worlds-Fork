@@ -34,9 +34,12 @@ execute as @a[scores={legitermoose.gmc_time=1..},gamemode=creative] run function
 clear @a[tag=!is_admin] potion
 clear @a[tag=!is_admin] splash_potion
 clear @a[tag=!is_admin] lingering_potion
+clear @a[tag=!is_admin] tipped_arrow
 clear @a[tag=!is_admin] ender_dragon_spawn_egg
 clear @a[tag=!is_admin] wither_spawn_egg
 clear @a[tag=!is_admin] tnt_minecart
+clear @a[tag=!is_admin] end_crystal
+clear @a[tag=!is_admin] goat_horn
 
 kill @e[type=splash_potion]
 kill @e[type=lingering_potion]
@@ -88,7 +91,7 @@ execute as @a[scores={playersearch=1..}] run function legitermoose:world/search/
 # leave detection
 execute as @a[scores={leave=1..}] run function legitermoose:util/leave
 
-
+execute as @a run function legitermoose:util/no_gma_blocks
 
 # World ID
 execute positioned 0 64 0 as @a[distance=251..] run function legitermoose:util/get_worldid
@@ -105,8 +108,14 @@ tp @a[scores={lobby=1..}] 1000 64 0
 tag @a[scores={lobby=1..}] add legitermoose.is_playing
 execute as @a[scores={lobby=1..}] at @s run playsound block.note_block.pling ui @s ~ ~ ~ 1 2
 tellraw @a[scores={lobby=1..}] [{text:"Wᴇʟᴄᴏᴍᴇ ᴛᴏ ",color:gold},{text:"ʟᴇɢɪᴛᴇʀᴍᴏᴏꜱᴇ.ᴄᴏᴍ",color:"#00AAFF",underlined:1b},{text:"! ",color:gold,underlined:0b},"\n",{text:"Cᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ: ",color:dark_green},{text:"ʟᴏʙʙʏ",color:green}]
+clear @a[scores={lobby=1..}] *
 scoreboard players reset @a[scores={lobby=1..}] lobby
 
 execute positioned 1000 64 0 run scoreboard players enable @a[distance=..250,tag=is_am] fly
 execute positioned 1000 64 0 run scoreboard players reset @a[distance=251..] fly
+scoreboard players enable @a[scores={legitermoose.rank=10}] fly
 execute as @a[scores={fly=1..}] run function legitermoose:lobby/toggle_fly
+
+scoreboard players enable @a[scores={legitermoose.rank=10}] settings
+execute as @a unless score @s legitermoose.rank matches 10 run scoreboard players reset @s settings
+execute as @a[scores={settings=1..}] run function legitermoose:world/feat/worldsettings

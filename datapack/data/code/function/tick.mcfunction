@@ -9,10 +9,9 @@ execute as @a run function code:realtime/set
 function code:browser/tick
 function code:ads/tick
 
-execute as @a[predicate=code:is_y_below_40,tag=legitermoose.is_playing] run function legitermoose:util/get_name
-execute if entity @a[predicate=code:is_y_below_40,tag=legitermoose.is_playing] run tellraw @a[tag=legitermoose.is_playing] [{text:"[",color:gray},{text:"↓",color:yellow},{text:"] ",color:gray},{storage:"legitermoose:temp",nbt:playername}]
-execute if entity @a[predicate=code:is_y_below_40,tag=legitermoose.is_playing] run tellraw @a[tag=!legitermoose.is_playing] [{text:"[",color:gray},{text:"↓",color:green},{text:"] ",color:gray},{storage:"legitermoose:temp",nbt:playername}]
+execute as @a[predicate=code:is_y_below_40,tag=legitermoose.is_playing] run function legitermoose:lobby/join/rank_leave
 tp @a[predicate=code:is_y_below_40] 0 64 0
+
 execute as @a[x=1,y=64,z=26,dx=-2,dy=2,dz=1] run tp @s 100 64 0
 
 # Random World Button
@@ -35,12 +34,11 @@ scoreboard players reset @a[scores={toggle_info=1..}] toggle_info
 # add code one day
 
 scoreboard players add .globaltimer misc 1
-execute if score .globaltimer misc matches 100 run function code:polishkrowa/init
 
 execute if score .globaltimer misc matches 600 run tellraw @a[tag=is_admin,tag=!ignore] {text:"Cᴀʟʟɪɴɢ API... (Lɪᴠᴇ Vᴏᴛᴇ / Vɪꜱɪᴛ Cᴏᴜɴᴛ)",color:"#333388"}
 execute if score .globaltimer misc matches 600 run http callback code:update_vote_count store api vote_count send "https://api.legiti.dev/world/f9407daa-81c5-4de5-a200-667667f09750"
 
-execute if score .globaltimer misc matches 1200 run function code:moose/init
+execute if score .globaltimer misc matches 1200 run function code:playerdetect/init
 
 
 

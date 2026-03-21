@@ -1,3 +1,7 @@
+# Store previous World ID in a score
+scoreboard players operation @s previd = @s worldid
+
+
 # Store x pos in scoreboard (scaled to the next 100)
 execute store result score .temp worldid run data get entity @s Pos[0] .01
 
@@ -12,3 +16,7 @@ scoreboard players remove .temp worldid 9
 
 # Set own World ID to the temp score
 scoreboard players operation @s worldid = .temp worldid
+
+
+# If World ID is not equal previous ID 
+execute unless score @s worldid = @s previd run function legitermoose:util/changed_world
