@@ -1,0 +1,1 @@
+execute if score @s ui matches 1 run return run function legitermoose:world_browser/click

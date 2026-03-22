@@ -1,6 +1,7 @@
 # Welcome to Legitermoose.com Datapack. This is a terrible recreation of Legitimoose on Legitimoose.
 
 # Spawn Stuff
+execute positioned 1000 64 0 as @a[distance=..250] run tag @s add legitermoose.is_playing
 execute positioned 0 64 0 as @a[distance=..250] run tag @s remove legitermoose.is_playing
 execute positioned 0 64 0 run gamemode adventure @a[distance=..250,tag=!is_admin]
 execute positioned 0 64 0 run scoreboard players set @a[distance=..250] worldid -1
@@ -34,7 +35,7 @@ execute as @a[scores={legitermoose.gmc_time=1..},gamemode=creative] run function
 
 
 # Forbidden Items
-clear @a[tag=!is_admin] potion
+    #clear @a[tag=!is_admin] potion
 clear @a[tag=!is_admin] splash_potion
 clear @a[tag=!is_admin] lingering_potion
 clear @a[tag=!is_admin] tipped_arrow
@@ -43,6 +44,7 @@ clear @a[tag=!is_admin] wither_spawn_egg
 clear @a[tag=!is_admin] tnt_minecart
 clear @a[tag=!is_admin] end_crystal
 clear @a[tag=!is_admin] goat_horn
+clear @a[tag=!is_admin] ender_chest
 
 kill @e[type=splash_potion]
 kill @e[type=lingering_potion]
@@ -104,6 +106,7 @@ execute as @a run function legitermoose:util/gm/world_gm
 # Voting
 scoreboard players enable @a[tag=legitermoose.is_playing,tag=!legitermoose.has_voted_lobby] vote
 scoreboard players enable @a[tag=legitermoose.is_playing,tag=legitermoose.has_voted_lobby,scores={worldid=1..}] vote
+execute positioned 0 64 0 run scoreboard players reset @a[distance=..250] vote
 execute as @a[scores={vote=1..}] run function legitermoose:vote/vote
 scoreboard players reset @a[scores={vote=1..}] vote
 
@@ -114,6 +117,7 @@ tag @a[scores={lobby=1..}] add legitermoose.is_playing
 execute as @a[scores={lobby=1..}] at @s run playsound block.note_block.pling ui @s ~ ~ ~ 1 2
 tellraw @a[scores={lobby=1..}] [{text:"Wᴇʟᴄᴏᴍᴇ ᴛᴏ ",color:gold},{text:"ʟᴇɢɪᴛᴇʀᴍᴏᴏꜱᴇ.ᴄᴏᴍ",color:"#00AAFF",underlined:1b},{text:"! ",color:gold,underlined:0b},"\n",{text:"Cᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ: ",color:dark_green},{text:"ʟᴏʙʙʏ",color:green}]
 clear @a[scores={lobby=1..}] *
+item replace entity @a[scores={lobby=1..}] hotbar.4 with compass[item_name="World Browser", consumable={consume_seconds:2147483647}, custom_data={world_browser:1b}]
 scoreboard players reset @a[scores={lobby=1..}] lobby
 
 execute positioned 1000 64 0 run scoreboard players enable @a[distance=..250,tag=is_am] fly
@@ -124,3 +128,6 @@ scoreboard players enable @a[scores={legitermoose.rank=10}] fly
 scoreboard players enable @a[scores={legitermoose.rank=10}] settings
 execute as @a unless score @s legitermoose.rank matches 10 run scoreboard players reset @s settings
 execute as @a[scores={settings=1..}] run function legitermoose:world/feat/worldsettings
+
+execute as @a at @s run function legitermoose:player/tick
+execute as @e[type=item] if items entity @s container.0 *[custom_data~{custom_ui:1b}] run kill @s

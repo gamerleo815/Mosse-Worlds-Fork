@@ -1,0 +1,19 @@
+{
+    "criteria": {
+        "": {
+            "trigger": "using_item",
+            "conditions": {
+                "item": {
+                    "predicates": {
+                        "custom_data": {
+                            "world_browser": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "legitermoose:world_browser/open"
+    }
+}

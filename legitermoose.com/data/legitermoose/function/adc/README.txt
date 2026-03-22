@@ -1,0 +1,1 @@
+ADC (ADmin Commands) are commands for managing players. 
