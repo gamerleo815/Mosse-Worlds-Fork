@@ -38,7 +38,7 @@ scoreboard objectives add timeout dummy
 scoreboard objectives add requests dummy
 
 
-setworldspawn 0 64 0
+setworldspawn 0 64 0 0 0
 
 team add player
 team modify player friendlyFire false

@@ -12,8 +12,7 @@ scoreboard players add @s legitermoose.tp_cd 1
 # Get world rank
 function legitermoose:world/ranks/get_ranks
 
-# Remove flying 
-tellraw @s [{text:"World Rank: "},{score:{name:"@s",objective:legitermoose.rank}}]
+# Remove flying (or add it idk)
 execute unless score @s legitermoose.rank matches 10 run data merge entity @s[tag=!is_admin] {abilities:{mayfly:0b,flying:0b}}
 execute if score @s legitermoose.rank matches 10 run data merge entity @s[tag=!is_admin] {abilities:{mayfly:1b,flying:0b}}
 

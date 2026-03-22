@@ -1,5 +1,8 @@
 scoreboard players set .globaltimer misc 0
 
+# =-=-=-= Error Handling =-=-=-=
+execute if data storage player_detect {a:{status_code:503}} positioned 9 64 -19 run return run tellraw @a[distance=..10] [{text:"\n⚠ Aɴ API ᴇʀʀᴏʀ ᴏᴄᴄᴜʀᴇᴅ!\nEʀʀᴏʀ: ",color:red},{storage:player_detect,nbt:a.response.message}]
+
 # =-=-=-= Moose Detect =-=-=-=
 scoreboard players add .total requests 1
 scoreboard players add .moose_online requests 1
@@ -21,5 +24,5 @@ execute unless data storage player_detect a.response[{players:["Legitermoose"]}]
 scoreboard players add .total requests 1
 scoreboard players add .polish_online requests 1
 
-execute if data storage player_detect a.response[{players:["PolishKrowa"]}] positioned 9 64 -190 run function code:playerdetect/polishkrowa/_found
+execute if data storage player_detect a.response[{players:["PolishKrowa"]}] positioned 9 64 -19 run function code:playerdetect/polishkrowa/_found
 execute unless data storage player_detect a.response[{players:["PolishKrowa"]}] positioned 9 64 -19 run function code:playerdetect/polishkrowa/_notfound

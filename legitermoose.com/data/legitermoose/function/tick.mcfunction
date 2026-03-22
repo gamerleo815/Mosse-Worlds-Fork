@@ -4,6 +4,9 @@
 execute positioned 0 64 0 as @a[distance=..250] run tag @s remove legitermoose.is_playing
 execute positioned 0 64 0 run gamemode adventure @a[distance=..250,tag=!is_admin]
 execute positioned 0 64 0 run scoreboard players set @a[distance=..250] worldid -1
+execute positioned 0 64 0 as @a[distance=..250] run spawnpoint @s 0 64 0 0 0
+execute positioned 1000 64 0 as @a[distance=..250] run spawnpoint @s 1000 64 0 90 0
+
 
 # Visibility across "worlds"
 visibility @a[tag=legitermoose.is_playing] show @a[tag=legitermoose.is_playing]
@@ -62,12 +65,6 @@ kill @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{ui:1b}}}}]
 # Player Count
 execute store result score .players legitermoose.misc if entity @a[tag=legitermoose.is_playing]
 
-# Voting
-scoreboard players enable @a[tag=legitermoose.is_playing,tag=!legitermoose.has_voted_lobby] vote
-execute as @a[scores={vote=1..}] run function legitermoose:vote/vote
-scoreboard players reset @a[scores={vote=1..}] vote
-
-
 # Playerlist
 playerlist @a[tag=!legitermoose.is_playing] footer set <gold> <b> </b> Yᴏᴜ ᴀʀᴇ ᴘʟᴀʏɪɴɢ ᴏɴ: <gradient:gold:yellow><shadow:#ff00007f>M<shadow:#ff0f007f>o<shadow:#ff1f007f>s<shadow:#ff2e007f>s<shadow:#ff3e007f>e <shadow:#ff5d007f>W<shadow:#ff6c007f>o<shadow:#ff7c007f>r<shadow:#ff8b007f>l<shadow:#ff9b007f>d<yellow><shadow:gold:.5>s <b></b> <b> </b>
 playerlist @a[tag=legitermoose.is_playing] footer set <gold> <b> </b> Yᴏᴜ ᴀʀᴇ ᴘʟᴀʏɪɴɢ ᴏɴ: <blue><u>legitermoose.com</u> <b></b> <b> </b>
@@ -103,6 +100,14 @@ execute as @a run function legitermoose:util/gm/world_gm
 
 
 # trigger
+
+# Voting
+scoreboard players enable @a[tag=legitermoose.is_playing,tag=!legitermoose.has_voted_lobby] vote
+scoreboard players enable @a[tag=legitermoose.is_playing,tag=legitermoose.has_voted_lobby,scores={worldid=1..}] vote
+execute as @a[scores={vote=1..}] run function legitermoose:vote/vote
+scoreboard players reset @a[scores={vote=1..}] vote
+
+
 scoreboard players enable @a lobby
 tp @a[scores={lobby=1..}] 1000 64 0
 tag @a[scores={lobby=1..}] add legitermoose.is_playing
@@ -112,9 +117,9 @@ clear @a[scores={lobby=1..}] *
 scoreboard players reset @a[scores={lobby=1..}] lobby
 
 execute positioned 1000 64 0 run scoreboard players enable @a[distance=..250,tag=is_am] fly
+execute as @a[scores={fly=1..}] run function legitermoose:lobby/toggle_fly
 execute positioned 1000 64 0 run scoreboard players reset @a[distance=251..] fly
 scoreboard players enable @a[scores={legitermoose.rank=10}] fly
-execute as @a[scores={fly=1..}] run function legitermoose:lobby/toggle_fly
 
 scoreboard players enable @a[scores={legitermoose.rank=10}] settings
 execute as @a unless score @s legitermoose.rank matches 10 run scoreboard players reset @s settings
