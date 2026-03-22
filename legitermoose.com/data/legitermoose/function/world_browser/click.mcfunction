@@ -9,4 +9,4 @@ execute if items entity @s player.cursor *[custom_data~{first_page:1b}] if score
 execute unless items entity @s player.cursor *[custom_data~{world:1b}] run return 0
 
 item replace entity @s enderchest.0 from entity @s player.cursor
-say AAEAEEAEAEAE
+execute store result score @s worldsearch run data get entity @s EnderItems[{Slot:0b}].components.minecraft:custom_data.world_id

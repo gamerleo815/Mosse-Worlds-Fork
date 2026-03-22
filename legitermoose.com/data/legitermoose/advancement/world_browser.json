@@ -14,6 +14,6 @@
         }
     },
     "rewards": {
-        "function": "legitermoose:world_browser/open"
+        "function": "legitermoose:world_browser/open_compass"
     }
 }

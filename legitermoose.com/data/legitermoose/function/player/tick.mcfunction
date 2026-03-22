@@ -1,3 +1,6 @@
+
+function legitermoose:triggers_tick
+
 execute if score @s join matches 1.. run function legitermoose:player/join
 
 execute if items entity @s player.cursor *[custom_data~{custom_ui:true}] run function legitermoose:ui/handle_click

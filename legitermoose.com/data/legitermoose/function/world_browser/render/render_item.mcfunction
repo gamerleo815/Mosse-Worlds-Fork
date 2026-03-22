@@ -6,4 +6,5 @@ execute store result storage legitermoose:world_browser browser.world_offset int
 function legitermoose:world_browser/render/get_item with storage legitermoose:world_browser browser
 execute unless data storage legitermoose:world_browser browser.owner run return 0
 function legitermoose:world_browser/render/format_owner with storage legitermoose:world_browser browser
+function legitermoose:world_browser/render/get_player_count with storage legitermoose:world_browser browser
 function legitermoose:world_browser/render/_render_item with storage legitermoose:world_browser browser

@@ -16,6 +16,7 @@ scoreboard objectives add join custom:leave_game
 scoreboard objectives add time_since_open dummy
 scoreboard objectives add ui dummy
 
+scoreboard objectives add play trigger
 scoreboard objectives add vote trigger
 scoreboard objectives add lobby trigger
 scoreboard objectives add fly trigger

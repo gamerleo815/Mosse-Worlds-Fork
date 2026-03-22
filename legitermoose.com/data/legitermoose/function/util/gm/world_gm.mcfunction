@@ -31,4 +31,4 @@ gamemode creative @s[tag=!is_admin,scores={legitermoose.rank=10}]
 gamemode adventure @s[tag=!is_admin,scores={legitermoose.rank=0}]
 
 # Clear all players that have scores of 0/1
-clear @s[tag=!is_admin,scores={legitermoose.rank=0}] *[!custom_data~{ui:1b}]
+#clear @s[tag=!is_admin,scores={legitermoose.rank=0}] *[!custom_data~{ui:1b}]
