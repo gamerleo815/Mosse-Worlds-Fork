@@ -6,7 +6,6 @@ execute unless score @s worldid matches -8 run tellraw @s [{text:"Jᴏɪɴᴇᴅ
 
 # merge data
 function legitermoose:util/gm/world_gm
-
 execute if score @s legitermoose.rank matches 10 run return fail
 execute if entity @s[tag=is_admin] run return fail
 

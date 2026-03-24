@@ -1,52 +1,44 @@
-
+gamerule announceAdvancements false
 gamerule doMobSpawning false
-gamerule mobGriefing false
 gamerule doFireTick false
 gamerule doImmediateRespawn true
+gamerule fallDamage false
+gamerule keepInventory true
+gamerule mobGriefing false
 gamerule locatorBar false
 gamerule randomTickSpeed 100
-gamerule fallDamage false
-gamerule announceAdvancements false
 gamerule tntExplodes false
-gamerule keepInventory true
 
 time set 23582
 
 scoreboard objectives add id dummy
 scoreboard objectives add misc dummy
-scoreboard objectives add toggle_info trigger
-
+scoreboard objectives add time dummy
 scoreboard objectives add hour dummy
 scoreboard objectives add hour2 dummy
-
-scoreboard objectives add offset trigger
-scoreboard objectives add time dummy
+scoreboard objectives add timeout dummy
+scoreboard objectives add requests dummy
 
 scoreboard objectives add numbers dummy
 scoreboard players set -24 numbers -24
+scoreboard players set 10 numbers 10
+scoreboard players set 18 numbers 18
 scoreboard players set 20 numbers 20
 scoreboard players set 24 numbers 24
 scoreboard players set 60 numbers 60
+scoreboard players set 100 numbers 100
 scoreboard players set 3600 numbers 3600
 scoreboard players set 10000 numbers 10000
 scoreboard players set 86400 numbers 86400
 
+scoreboard objectives add offset trigger
+scoreboard objectives add toggle_info trigger
 
-
-scoreboard objectives add timeout dummy
-
-scoreboard objectives add requests dummy
-
-
-setworldspawn 0 64 0 0 0
+setworldspawn 0 64 0 0 8
 
 team add player
 team modify player friendlyFire false
 team modify player collisionRule never
-
-team add tester
-team modify tester friendlyFire false
-team modify tester collisionRule never
 
 tellraw @a { "color": "gold", "text": "Tʜᴇ Mᴏꜱꜱᴇ ɪꜱ Wᴏʀʟᴅ"}
 
@@ -70,11 +62,8 @@ kill @e[tag=discord_join]
 summon interaction 5.5 64.5 10.5 {width:2,height:2,Tags:["discord_join"]}
 summon text_display 5.5 66.2 9.9 {text:{text:"Cʟɪᴄᴋ ᴛᴏ ᴊᴏɪɴ ᴛʜᴇ Dɪꜱᴄᴏʀᴅ!",color:blue},Tags:["discord_join"],Rotation:[180,0],transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.875f, 0.875f, 0.875f], translation: [0.0f, 0.0f, 0.0f]}}
 
-
-execute positioned 10 63 -12 run function code:playerdetect/init
-
-scoreboard players set .globaltimer misc 0
-
-
 kill @e[type=interaction,tag=chest_protection_interaction]
 summon interaction -6 63.5 8 {Tags:["show_for_timed_out_users","chest_protection_interaction"],width:3,height:2}
+
+scoreboard players set .globaltimer misc 0
+execute positioned 10 63 -12 run function code:playerdetect/init

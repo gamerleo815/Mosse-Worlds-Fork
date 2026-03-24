@@ -1,7 +1,6 @@
 # Store previous World ID in a score
 scoreboard players operation @s previd = @s worldid
 
-
 # Store x pos in scoreboard (scaled to the next 100)
 execute store result score .temp worldid run data get entity @s Pos[0] .01
 

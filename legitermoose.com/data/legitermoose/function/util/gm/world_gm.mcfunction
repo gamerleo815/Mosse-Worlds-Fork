@@ -1,3 +1,4 @@
+# Store Your UUID in Storage
 data modify storage legitermoose:temp ranks.UUID set from entity @s UUID
 
 # Store World ID in Storage
@@ -29,6 +30,3 @@ gamemode creative @s[tag=!is_admin,scores={legitermoose.rank=10}]
 
 # Set all Rank 0s to Adventure
 gamemode adventure @s[tag=!is_admin,scores={legitermoose.rank=0}]
-
-# Clear all players that have scores of 0/1
-#clear @s[tag=!is_admin,scores={legitermoose.rank=0}] *[!custom_data~{ui:1b}]

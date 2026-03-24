@@ -1,5 +1,7 @@
 # trigger tick
 function legitermoose:triggers/tick
+function legitermoose:util/no_gma_blocks
+function legitermoose:util/gm/world_gm
 
 execute if score @s join matches 1.. run function legitermoose:player/join
 
