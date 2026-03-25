@@ -29,3 +29,6 @@ execute if loaded 1000 64 0 run function legitermoose:load/spawn
 tellraw @a[tag=is_admin] [{text:"ʟᴇɢɪᴛᴇʀᴍᴏᴏꜱᴇ.ᴄᴏᴍ ʟᴏᴀᴅᴇᴅ!",color:gray}]
 
 #   edit name <gradient:gold:yellow><shadow:#ff00007f>M<shadow:#ff0f007f>o<shadow:#ff1f007f>s<shadow:#ff2e007f>s<shadow:#ff3e007f>e <shadow:#ff5d007f>W<shadow:#ff6c007f>o<shadow:#ff7c007f>r<shadow:#ff8b007f>l<shadow:#ff9b007f>d<yellow><shadow:gold:.5>s
+
+#   edit description <green>Jᴏɪɴ </green><u><#3366ff>ʟᴇɢɪᴛᴇʀᴍᴏᴏꜱᴇ.ᴄᴏᴍ</u><green> ᴛᴏᴅᴀʏ! </green><br><green>ᴍᴇꜱꜱɪɴɢ ᴡɪᴛʜ <u><gold>/ʜᴛᴛᴘ</u> & ᴍᴏʀᴇ!
+#   edit description <gradient:#00cc00:green>Jᴏɪɴ </gradient><u><gradient:#3366ff:blue:#3311dd>ʟᴇɢɪᴛᴇʀᴍᴏᴏꜱᴇ.ᴄᴏᴍ</u><gradient:green:#00cc00> ᴛᴏᴅᴀʏ! </gradient><br><green>ᴍᴇꜱꜱɪɴɢ ᴡɪᴛʜ <u><gold>/ʜᴛᴛᴘ</u> & ᴍᴏʀᴇ!

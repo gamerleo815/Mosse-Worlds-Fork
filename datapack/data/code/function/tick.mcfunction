@@ -1,5 +1,5 @@
 team join player @a[team=]
-effect give @a[nbt=!{active_effects:[{id:"minecraft:saturation"}]}] saturation 10 1 true
+effect give @a[nbt=!{active_effects:[{id:"minecraft:saturation"}]}] saturation 100 1 true
 execute store result score .players misc if entity @a
 
 execute as @a unless score @s id matches -2147483648..2147483647 run function code:_id

@@ -2,7 +2,6 @@
     "values": 
         [
             "legitermoose:tick",
-            "legitermoose:world/load_world/tick",
-            "legitermoose:coding/blocks/spawn/tick"
+            "legitermoose:world/load_world/tick"
         ]
 }

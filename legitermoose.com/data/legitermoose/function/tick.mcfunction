@@ -66,7 +66,7 @@ execute store result score .players legitermoose.misc if entity @a[tag=legitermo
 
 # Playerlist
 playerlist @a[tag=!legitermoose.is_playing] footer set <gold> <b> </b> Yᴏᴜ ᴀʀᴇ ᴘʟᴀʏɪɴɢ ᴏɴ: <gradient:gold:yellow><shadow:#ff00007f>M<shadow:#ff0f007f>o<shadow:#ff1f007f>s<shadow:#ff2e007f>s<shadow:#ff3e007f>e <shadow:#ff5d007f>W<shadow:#ff6c007f>o<shadow:#ff7c007f>r<shadow:#ff8b007f>l<shadow:#ff9b007f>d<yellow><shadow:gold:.5>s <b></b> <b> </b>
-playerlist @a[tag=legitermoose.is_playing] footer set <gold> <b> </b> Yᴏᴜ ᴀʀᴇ ᴘʟᴀʏɪɴɢ ᴏɴ: <blue><u>legitermoose.com</u> <b></b> <b> </b>
+playerlist @a[tag=legitermoose.is_playing] footer set <gold> <b> </b> Yᴏᴜ ᴀʀᴇ ᴘʟᴀʏɪɴɢ ᴏɴ: <#3366ff><u>ʟᴇɢɪᴛᴇʀᴍᴏᴏꜱᴇ.ᴄᴏᴍ</u> <b></b> <b> </b>
 
 # Teleporting
 execute as @a[tag=legitermoose.teleported,scores={legitermoose.tp_cd=..21}] run function legitermoose:world/load_world/tp_to_plot with storage legitermoose:temp plot_position
