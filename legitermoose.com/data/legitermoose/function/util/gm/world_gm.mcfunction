@@ -26,7 +26,7 @@ gamemode creative @s[tag=!is_admin,scores={legitermoose.rank=5}]
 execute positioned 1000 64 0 run scoreboard players set @a[tag=is_admin,distance=..250] legitermoose.rank 10
 
 # Set all Rank 10s to Creative
-gamemode creative @s[tag=!is_admin,scores={legitermoose.rank=10}]
+execute positioned 1000 64 0 run gamemode creative @s[tag=!is_admin,scores={legitermoose.rank=10},distance=..250]
 
 # Set all Rank 0s to Adventure
-gamemode adventure @s[tag=!is_admin,scores={legitermoose.rank=0}]
+execute positioned 1000 64 0 run gamemode adventure @s[tag=!is_admin,scores={legitermoose.rank=0},distance=..250]
